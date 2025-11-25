@@ -193,7 +193,7 @@ button {
   }
 }
 /*mobile menu*/
-.mobule-menu {
+.mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -203,9 +203,9 @@ button {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /*z-index: 1000;
-  padding: 32px 16px;*/
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-menu.is-open {
   opacity: 1;
@@ -215,18 +215,88 @@ button {
 .mobile-menu-conteiner {
   position: relative;
   padding-top: 72px;
-  padding-bottom: 40px;
+  padding-bottom: 48px;
 
   display: flex;
   flex-direction: column;
-  height: 100%;
+
+  height: auto;
 }
 .mobile-menu-close {
-  position: absolute;
   top: 24px;
-  left: 24px;
   right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e7e9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
+.mobile-menu-close:hover,
+.mobile-menu-close:focus {
+  background-color: #404bbf;
+  border: none;
+  fill: #ffffff;
+}
+
 .mobile-menu-nav {
   margin-bottom: auto;
+}
+.mobile-contacts {
+  margin-top: auto;
+}
+.mobile-list-link {
+  display: block;
+  padding: 24px 0;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-contacts-link {
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #4d5ae5;
+}
+.mobile-menu-footer {
+  margin-top: 40px;
+}
+.mobile-menu-icons-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-icons-list-item {
+  width: 40px;
+  height: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-icons-list-item-link {
+  fill: #f4f4fd;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
