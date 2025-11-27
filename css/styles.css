@@ -47,6 +47,7 @@ button {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 /*common*/
 .container {
   max-width: 320px;
@@ -192,6 +193,7 @@ button {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
 /*mobile menu*/
 .mobile-menu {
   position: fixed;
@@ -216,7 +218,7 @@ button {
   position: relative;
   padding-top: 72px;
   padding-bottom: 48px;
-
+  height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -249,12 +251,17 @@ button {
 .mobile-menu-nav {
   margin-bottom: auto;
 }
-.mobile-contacts {
-  margin-top: auto;
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
 }
+
 .mobile-list-link {
   display: block;
-  padding: 24px 0;
+  padding: 40px 0;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
@@ -262,16 +269,30 @@ button {
   color: #2e2f42;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.mobile-list-link.current,
+.mobile-contacts-link.current {
+  color: #404bbf;
+}
+.mobile-contacts {
+  margin-top: auto;
+  padding-top: 168px;
+}
+.mobile-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .mobile-contacts-link {
   display: block;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: #4d5ae5;
+  color: #434455;
 }
 .mobile-menu-footer {
-  margin-top: 40px;
+  margin-top: 48px;
 }
 .mobile-menu-icons-list {
   display: flex;
@@ -299,4 +320,256 @@ button {
   height: 40px;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/*hero banner*/
+.hero-banner {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 188px 0;
+  text-align: center;
+  background: #2e2f42;
+
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/people-office.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.hero-title {
+  width: 216px;
+  height: 160px;
+  margin: 0 auto 72px auto;
+  max-width: 320px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #fff;
+}
+.hero-banner-text {
+  padding-top: 72px;
+  padding-right: 52px;
+  padding-left: 52px;
+}
+.hero-banner-button {
+  width: 169px;
+  height: 56px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+  background: #4d5ae5;
+  border: none;
+}
+button[type="button"] {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .hero-banner {
+    max-width: 768px;
+  }
+  .hero-title {
+    width: 496px;
+    height: 120px;
+  }
+  .hero-banner-text {
+    padding-top: 112px;
+    padding-right: 136px;
+    padding-left: 136px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .hero-banner {
+    max-width: 1158px;
+  }
+  .hero-banner-text {
+    padding-top: 188px;
+    padding-right: 472px;
+    padding-left: 472px;
+  }
+}
+
+/*about*/
+.about-team {
+  padding: 96px 16px;
+}
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+.about-item {
+  width: 100%;
+}
+.about-icon-container {
+  display: none;
+}
+.about-title {
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+}
+.about-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
+}
+@media screen and (min-width: 768px) {
+  .about-team {
+    padding: 96px 16px;
+  }
+  .about-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+  .about-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .about-title {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .about-team {
+    padding: 120px 0;
+  }
+  .about-list {
+    gap: 24px;
+  }
+  .about-item {
+    width: calc((100% - 72px) / 4);
+  }
+  .about-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 112px;
+
+    border-radius: 4px;
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+    margin-bottom: 8px;
+  }
+
+  .about-title {
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .about-text {
+    font-weight: 400;
+  }
+}
+
+/*portfolio*/
+.portfolio-team {
+  padding: 96px 0;
+  background-color: #f4f4fd;
+}
+.portfolio-title {
+  margin-bottom: 72px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  text-transform: capitalize;
+  background-color: #f4f4fd;
+}
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+.portfolio-item {
+  width: 264px;
+  height: 428px;
+  border-radius: 0 0 4px 4px;
+  width: calc((100% - 72px) / 3);
+  background-color: #ffffff;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  overflow: hidden;
+}
+.team-info {
+  padding: 32px 0;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-title {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+}
+.team-title-text {
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #434455;
+}
+.icons-list {
+  display: flex;
+  justify-content: center;
+
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.team-icon-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #f4f4fd;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.team-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
 }
