@@ -345,7 +345,7 @@ button {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url("../images/people-office.jpg");
+    url("../images/mobile/hero-mobile1x.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -384,9 +384,15 @@ button[type="button"] {
   letter-spacing: 0.04em;
   color: #fff;
 }
+@media (min-resolution: 192dpi) {
+  .hero-banner {
+    background-image: url("../images/mobile/hero-mobile2x.jpg");
+  }
+}
 @media screen and (min-width: 768px) {
   .hero-banner {
     max-width: 768px;
+    background-image: url(../images/tablet/hero-tablet1x.jpg);
   }
   .hero-title {
     width: 496px;
@@ -398,14 +404,25 @@ button[type="button"] {
     padding-left: 136px;
   }
 }
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .hero-banner {
+    background-image: url("../images/tablet/hero-tablet2x.jpg");
+  }
+}
 @media screen and (min-width: 1158px) {
   .hero-banner {
     max-width: 1158px;
+    background-image: url(../images/main/people-office-main1x.jpg);
   }
   .hero-banner-text {
     padding-top: 188px;
     padding-right: 472px;
     padding-left: 472px;
+  }
+}
+@media screen and (min-width: 1158px) and (min-resolution: 192dpi) {
+  .hero-banner {
+    background-image: url("../images/main/people-office-main2x.jpg");
   }
 }
 
@@ -700,6 +717,9 @@ button[type="button"] {
   .card-item {
     width: calc((100% - 24px) / 2);
   }
+  .card-info {
+    width: 356px;
+  }
 }
 @media screen and (min-width: 1158px) {
   .card {
@@ -712,6 +732,9 @@ button[type="button"] {
 
   .card-item {
     width: calc((100% - 48px) / 3);
+  }
+  .card-info {
+    width: 360px;
   }
 }
 
